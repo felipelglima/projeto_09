@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-height: 100%;
+    width: auto;
+}
+
+.hide{
+    display: none;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --ff-title: 'Montserrat', sans-serif, bold; 
+    --ff-text: 'Montserrat', sans-serif;
+    --ff-fortune: 'Dancing Script', cursive;
+    --ff-button: 'DM Sans', sans-serif;
+
+    --fc-text: #34355B;
+    --fc-fortune: #000000;
+    --fc-button: #FFFFFF;
+
+    --bc-body: linear-gradient(45deg, #190361, #BB00FF);
+    --bc-main: #FFFFFF;
+    --bc-fortune: #E4EDF1;
+    --bc-button: #FF9500;
+}
+
+@keyframes gradient{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+@keyframes appear{
+    0%{
+        transform: translateY(150%) scale(0%);
+    }
+    100%{
+        transform: translateY(0%), scale(100%);
+    }
+}
+
+body{
+    background: var(--bc-body);
+    background-size: 200% 200%;
+
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    animation: gradient ease 10s infinite;
+}
+
+main{
+    background: var(--bc-main);
+    box-shadow: 0 2.0rem 5.0rem rgba(0, 0, 0, 0.8);
+    border-radius: .5rem;
+
+    padding: 4.8rem 6.4rem 6.4rem;
+    margin: 0 auto;
+}
+
+div{
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-family: var(--ff-title);
+    color: var(--fc-text);
+    font-size: 2.4rem;
+}
+
+p{
+    font-family: var(--ff-text);
+    color: var(--fc-text);
+    font-size: 1.5rem;
+
+    margin: 1.4rem 0 2.0rem;
+}
+
+#cookie:hover{
+    cursor: pointer;
+
+    animation: shake 500ms infinite;
+}
+
+#fortune{
+    background: var(--bc-fortune);
+    box-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+
+    font-family: var(--ff-fortune);
+    font-size: 2.4rem;
+    color: var(--fc-fortune);
+
+    padding: 1.0rem;
+
+    animation: appear 2s;
+}
+
+button{
+    background: var(--bc-button);
+
+    border: none;
+    border-radius: .4rem;
+
+    font-family: var(--ff-button);
+    color: var(--fc-button);
+    font-size: 1.5rem;
+
+    padding: 1.6rem;
+    margin-top: 1.7rem;
+}
+
+button:hover{
+    cursor: pointer;
+
+    opacity: 0.8;
+}
